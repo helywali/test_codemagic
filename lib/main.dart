@@ -1,10 +1,20 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+ if (Platform.isIOS) {
+    await Firebase.initializeApp(
+        options: const FirebaseOptions(
+            apiKey: "AIzaSyARpWsQBo_Df0NIhQRT4HkRbZ-7j-k62vA",
+            appId: "1:252595884369:ios:20e95c0c803dbece44c370",
+            messagingSenderId: "252595884369",
+            projectId: "testcodemagic-15468"));
+  } else {
+    await Firebase.initializeApp();
+  }
   runApp(const MyApp());
 }
 
