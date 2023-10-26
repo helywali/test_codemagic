@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
- if (Platform.isIOS) {
+ if (Platform.isMacOS) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
             apiKey: "AIzaSyARpWsQBo_Df0NIhQRT4HkRbZ-7j-k62vA",
